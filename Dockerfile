@@ -1,7 +1,11 @@
 from fmdud/serf-base
 maintainer Fareed Dudhia <fareeddudhia@gmail.com>
 
-# Install redis
+run apt-get update -q
+run apt-get install -qy redis-server
+run mkdir -p /etc/service/redis/
+run touch /var/log/redis.log
+add ./redis.sh /etc/service/redis/run
 
 # Add the default env for the SERF_ROLE
 run touch /etc/container_environment/SERF_ROLE
